@@ -333,7 +333,7 @@ public:
             height += (height - 24000) * 3;
         if ((height >> 13) >= 60)
             return 0;
-        int64_t start = 50 * COIN;
+        int64_t start = 50 * CENT;
         int64_t res = start >> (height >> 13);
         res -= (res >> 14) * (height % 8192);
         return res;
