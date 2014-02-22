@@ -713,7 +713,7 @@ unsigned int NamecoinTestnetChain::nextWorkRequired(BlockIterator blk) const {
     // Go back by what we want to be 14 days worth of blocks
     BlockIterator former = blk - (nInterval-1);
     
-    if (h >= 19200 && (h+1 > nInterval))
+    if (h >= 0 && (h+1 > nInterval))
         former = blk - nInterval;
     
     // Limit adjustment step
