@@ -293,7 +293,7 @@ public:
     virtual const MessageStart& messageStart() const { return _messageStart; };
     virtual short defaultPort() const { return 8334; }
     
-    virtual unsigned int ircChannels() const { return 1; } // number of groups to try (100 for bitcoin, 2 for litecoin)
+    virtual unsigned int ircChannels() const { return 2; } // number of groups to try (100 for bitcoin, 2 for litecoin)
     
 private:
     Block _genesisBlock;
