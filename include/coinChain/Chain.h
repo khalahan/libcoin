@@ -350,11 +350,11 @@ public:
 
     // To enable upgrade from one block version to another we define a quorum and a majority for acceptance
     // of minimum this version as well as a quorum and majority for when the checks of that block version should be enforced.
-    virtual size_t accept_quorum() const { return 100;}
-    virtual size_t accept_majority() const { return 75; } // 75% of the last 100
+    virtual size_t accept_quorum() const { return 1000;}
+    virtual size_t accept_majority() const { return 1001; } // 95% of the last 1000
     
-    virtual size_t enforce_quorum() const { return 100; }
-    virtual size_t enforce_majority() const { return 51; } // 51% of the last 100
+    virtual size_t enforce_quorum() const { return 1000; }
+    virtual size_t enforce_majority() const { return 1001; } // 75% of the last 1000
     
     const PubKey& alert_key() const { return _alert_key; }
     
