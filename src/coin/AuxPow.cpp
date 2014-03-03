@@ -19,12 +19,12 @@ void RemoveMergedMiningHeader(vector<unsigned char>& vchAux)
 }
 
 
-bool AuxPow::Check(uint256 hashAuxBlock, int nChainID) const
+bool AuxPow::Check(uint256 hashAuxBlock, int nChainID, bool isTestnet = false) const
 {
     if (_index != 0)
         return error("AuxPow is not a generate");
 
-    if (parentBlock.getVersion() / BLOCK_VERSION_CHAIN_START == nChainID)
+    if (!isTestnet && parentBlock.getVersion() / BLOCK_VERSION_CHAIN_START == nChainID)
         return error("Aux POW parent has our chain ID");
 
     if (vChainMerkleBranch.size() > 30)

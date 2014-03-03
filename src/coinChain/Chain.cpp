@@ -681,7 +681,7 @@ const bool NamecoinTestnetChain::checkProofOfWork(const Block& block) const {
     }
     
     if (block.getVersion()&BLOCK_VERSION_AUXPOW) {
-        if (!block.getAuxPoW().Check(block.getHash(), block.getVersion()/BLOCK_VERSION_CHAIN_START))
+        if (!block.getAuxPoW().Check(block.getHash(), block.getVersion()/BLOCK_VERSION_CHAIN_START, true))
             return error("CheckProofOfWork() : AUX POW is not valid");
         // Check proof of work matches claimed amount
         if (block.getAuxPoW().GetParentBlockHash() > target.getuint256())
